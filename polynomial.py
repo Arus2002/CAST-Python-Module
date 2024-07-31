@@ -1,20 +1,28 @@
-from .mathFunctionsBase import MathFunctions
+from mathFunctionsBase import MathFunctions
 
 class Polynomial(MathFunctions):
-    def __init__(self, *coefficients):
-        self.coefficients = coefficients
+    def __init__(self, *coefficents):
+        self._coefficents = coefficents
     
+    @property
+    def coefficents(self):
+        return self._coefficents
+        
+    @coefficents.setter
+    def coefficents(self, *coefficents):
+        self._coefficents = coefficents
+
     def __call__(self, x):
         result = 0
-        for i, coeff in enumerate(self.coefficients):
-            result += coeff * (x ** i)
+        for i, coef in enumerate(self._coefficents):
+            result += coef * (x ** i)
         return result
     
     def derivative(self): 
-        deriv_coeffs = []
-        for i, coef in enumerate(self.coefficients):
-            if i > 0:  # Skip the constant term (index 0)
-                deriv_coeffs = i * coef
-                deriv_coeffs.append(deriv_coeffs)
+        der_coeffs = []
+        for i, coef in enumerate(self._coefficents):
+            if i > 0:
+                deriv_coef__f = i * coef
+                der_coeffs.append(deriv_coef__f)
 
-        return Polynomial(deriv_coeffs)
+        return Polynomial(*der_coeffs)
