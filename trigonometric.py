@@ -3,7 +3,7 @@ import math
 
 class Sin(MathFunctions):
     def __call__(self, x):
-        return math.sin(x)
+        return round(math.sin(x), 2)
         
     def __neg__(self):
         return Negate(self)
@@ -13,7 +13,7 @@ class Sin(MathFunctions):
     
 class Cos(MathFunctions):
     def __call__(self, x):
-        return math.cos(x)
+        return round(math.cos(x), 2)
     
     def derivative(self):
         return -Sin()

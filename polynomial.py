@@ -16,7 +16,7 @@ class Polynomial(MathFunctions):
         result = 0
         for i, coef in enumerate(self._coefficents):
             result += coef * (x ** i)
-        return result
+        return round(result, 2)
     
     def derivative(self): 
         der_coeffs = []
