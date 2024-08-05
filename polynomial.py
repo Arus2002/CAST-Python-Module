@@ -22,7 +22,7 @@ class Polynomial(MathFunctions):
         der_coeffs = []
         for i, coef in enumerate(self._coefficents):
             if i > 0:
-                deriv_coef__f = i * coef
-                der_coeffs.append(deriv_coef__f)
+                deriv_coeff = i * coef
+                der_coeffs.append(deriv_coeff)
 
         return Polynomial(*der_coeffs)
