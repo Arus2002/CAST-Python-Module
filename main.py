@@ -7,7 +7,7 @@ if __name__ == "__main__":
     sin = Sin()
     cos = Cos()
     tg = sin/cos
-    print(tg(math.pi/4)) # 1.0
+    print(tg(math.pi/2)) # 1.0
     tg_ = tg.derivative()
     print(tg_(math.pi/4)) # 2.0
     x_2 = Polynomial(0, 0, 1)  # 0*1 + 0*x + 1*x^2
@@ -19,21 +19,22 @@ if __name__ == "__main__":
 
     # Test 2
     # sin = Sin()
+    # print(sin)
     # cos = Cos()
-    # x_2 = Polynomial(0, 0, 1)  # 0*1 + 0*x + 1*x^2
+    # print(cos)
     # complex_func = cos.apply(cos.apply(cos)).derivative()
+    # print(complex_func)
     # print(complex_func(math.pi / 2))
 
     # Test 3
     # sin = Sin()
     # cos = Cos()
-    # x_2 = Polynomial(0, 0, 1)  # 0*1 + 0*x + 1*x^2
     # print((cos.apply(cos.apply(cos))).derivative()(math.pi / 2))
     # print((cos.apply(cos.apply(cos)))(math.pi / 2))
 
     # Test 4
     # sin = Sin()
     # cos = Cos()
-    # x_2 = Polynomial(0, 0, 1)  # 0*1 + 0*x + 1*x^2
+    # x_2 = Polynomial(0, -1, 1)  # 0*1 + 0*x + 1*x^2
     # print((cos.apply(cos.apply(x_2))).derivative()(math.pi / 2))
     # print((cos.apply(cos.apply(x_2)))(math.pi / 2))
