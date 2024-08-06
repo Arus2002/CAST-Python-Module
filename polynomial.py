@@ -3,14 +3,6 @@ from mathFunctionsBase import MathFunctions
 class Polynomial(MathFunctions):
     def __init__(self, *coefficents):
         self._coefficents = coefficents
-    
-    @property
-    def coefficents(self):
-        return self._coefficents
-        
-    @coefficents.setter
-    def coefficents(self, *coefficents):
-        self._coefficents = coefficents
 
     def __call__(self, x):
         result = 0
@@ -29,7 +21,7 @@ class Polynomial(MathFunctions):
 
     def __str__(self):
         terms = []
-        for i, coef in enumerate(self.coefficents):
+        for i, coef in enumerate(self._coefficents):
             if coef == 0:
                 continue
             if i == 0:

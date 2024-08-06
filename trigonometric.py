@@ -1,5 +1,5 @@
-from mathFunctionsBase import MathFunctions, Negate
 import math
+from mathFunctionsBase import MathFunctions, Negate
 
 class Sin(MathFunctions):
     def __call__(self, x):

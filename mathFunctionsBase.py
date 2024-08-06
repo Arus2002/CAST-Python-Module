@@ -82,6 +82,9 @@ class Mul(MathFunctions):
     
     def __str__(self):
         return f"({self._f} * {self._g})"
+    
+class ZeroDivisionError(Exception):
+    pass
 
 class Div(MathFunctions):
     def __init__(self, f, g):
@@ -89,7 +92,10 @@ class Div(MathFunctions):
         self._g = g
     
     def __call__(self, x):
-        return round(self._f(x) / self._g(x), 2)
+        if (self._g(x) != 0):
+            return round(self._f(x) / self._g(x), 2)
+        else:
+            raise ZeroDivisionError("Division by zero encountered in function evaluation")
     
     def derivative(self):
         return ((self._f.derivative() * self._g) - (self._f * self._g.derivative())) / (self._g * self._g)
@@ -109,7 +115,7 @@ class Compose(MathFunctions):
         return (self._f.derivative().apply(self._g) * self._g.derivative())
     
     def __str__(self):
-        outer_func = str(self._f)
-        inner_func = str(self._g)
-        return outer_func.replace('x', f"({inner_func})")
+        outer_funtion = str(self._f)
+        inner_function = str(self._g)
+        return outer_funtion.replace('x', f"({inner_function})")
     
